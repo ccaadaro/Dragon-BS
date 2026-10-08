@@ -1,0 +1,8 @@
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.sh text eol=lf
+src/dragon_bs/_vendor/** linguist-vendored
+# Preserve the upstream license bytes, including its original whitespace.
+src/dragon_bs/_vendor/gbrl_sb3/LICENSE -whitespace

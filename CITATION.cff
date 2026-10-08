@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use DRAGON-BS, please cite the paper below."
+title: "DRAGON-BS"
+type: software
+version: 0.1.0
+repository-code: "https://github.com/ccaadaro/Dragon-BS"
+license: GPL-3.0
+authors:
+  - family-names: "García-Flores"
+    given-names: "María B."
+  - family-names: "Cañada-Rostro"
+    given-names: "Carlos"
+  - family-names: "Paoletti"
+    given-names: "Mercedes E."
+  - family-names: "Haut"
+    given-names: "Juan M."
+preferred-citation:
+  type: article
+  title: "DRAGON-BS: A Unified Gradient-Boosted Reinforcement Learning Framework for Interpretable Band Selection"
+  authors:
+    - family-names: "García-Flores"
+      given-names: "María B."
+    - family-names: "Cañada-Rostro"
+      given-names: "Carlos"
+    - family-names: "Paoletti"
+      given-names: "Mercedes E."
+    - family-names: "Haut"
+      given-names: "Juan M."
+  journal: "IEEE Transactions on Geoscience and Remote Sensing"
+  year: 2026
+  doi: "10.1109/TGRS.2026.3741200"

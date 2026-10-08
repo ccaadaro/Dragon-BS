@@ -1,0 +1,20 @@
+name: Python checks
+on: [push, pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[analysis,dev]"
+      - run: ruff check src/dragon_bs tests
+      - run: pytest -q
+      - run: python -m dragon_bs.train --help
+      - run: python -m dragon_bs.evaluate --help
+      - run: python -m dragon_bs.explain --help

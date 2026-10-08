@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dragon-bs"
+version = "0.1.0"
+description = "Gradient-boosted reinforcement learning for hyperspectral band selection"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = "GPL-3.0-only AND LicenseRef-NVIDIA-Source-Code-NC"
+license-files = ["LICENSE", "src/dragon_bs/_vendor/gbrl_sb3/LICENSE"]
+authors = [
+  {name = "María B. García-Flores"},
+  {name = "Carlos Cañada-Rostro"},
+  {name = "Mercedes E. Paoletti"},
+  {name = "Juan M. Haut"},
+]
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "gymnasium>=0.29,<1.2"]
+
+[project.optional-dependencies]
+train = [
+  "torch>=2.0,<3", "gbrl==1.1.7", "stable-baselines3==2.6.0",
+  "sb3-contrib==2.6.0", "tensorboard>=2.15,<3",
+]
+analysis = ["scikit-learn>=1.4,<1.7", "matplotlib>=3.8,<4"]
+dev = ["pytest>=8,<9", "ruff>=0.11,<1"]
+
+[project.urls]
+Repository = "https://github.com/ccaadaro/Dragon-BS"
+Paper = "https://doi.org/10.1109/TGRS.2026.3741200"
+
+[project.scripts]
+dragon-bs-train = "dragon_bs.train:main"
+dragon-bs-evaluate = "dragon_bs.evaluate:main"
+dragon-bs-explain = "dragon_bs.explain:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"dragon_bs._vendor.gbrl_sb3" = ["LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["_local_archive", "src/dragon_bs/_vendor"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

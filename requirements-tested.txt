@@ -1,0 +1,12 @@
+# Runtime versions used for local validation, not a full transitive lockfile.
+# Install with: python -m pip install -r requirements-tested.txt -e .
+numpy==2.1.2
+scipy==1.15.2
+gymnasium==1.1.1
+torch==2.7.0
+gbrl==1.1.7
+stable-baselines3==2.6.0
+sb3-contrib==2.6.0
+tensorboard==2.19.0
+scikit-learn==1.6.1
+matplotlib==3.10.1
